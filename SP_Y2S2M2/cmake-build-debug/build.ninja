@@ -1,0 +1,157 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: SP_Y2S2M2_NEW
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/nisimatiya/Desktop/מדעי$ המחשב/clion/System$ programming/SP_Y2S2M2_NEW/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target SP_Y2S2M2_NEW
+
+
+#############################################
+# Order-only phony target for SP_Y2S2M2_NEW
+
+build cmake_object_order_depends_target_SP_Y2S2M2_NEW: phony || CMakeFiles/SP_Y2S2M2_NEW.dir
+
+build CMakeFiles/SP_Y2S2M2_NEW.dir/main.cpp.o: CXX_COMPILER__SP_Y2S2M2_NEW_Debug /Users/nisimatiya/Desktop/מדעי$ המחשב/clion/System$ programming/SP_Y2S2M2_NEW/main.cpp || cmake_object_order_depends_target_SP_Y2S2M2_NEW
+  DEP_FILE = CMakeFiles/SP_Y2S2M2_NEW.dir/main.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir
+  OBJECT_FILE_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir
+
+build CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/Demo.cpp.o: CXX_COMPILER__SP_Y2S2M2_NEW_Debug /Users/nisimatiya/Desktop/מדעי$ המחשב/clion/System$ programming/SP_Y2S2M2_NEW/CardWar_a-main/Demo.cpp || cmake_object_order_depends_target_SP_Y2S2M2_NEW
+  DEP_FILE = CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/Demo.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir
+  OBJECT_FILE_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main
+
+build CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/sources/player.cpp.o: CXX_COMPILER__SP_Y2S2M2_NEW_Debug /Users/nisimatiya/Desktop/מדעי$ המחשב/clion/System$ programming/SP_Y2S2M2_NEW/CardWar_a-main/sources/player.cpp || cmake_object_order_depends_target_SP_Y2S2M2_NEW
+  DEP_FILE = CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/sources/player.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir
+  OBJECT_FILE_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/sources
+
+build CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/sources/game.cpp.o: CXX_COMPILER__SP_Y2S2M2_NEW_Debug /Users/nisimatiya/Desktop/מדעי$ המחשב/clion/System$ programming/SP_Y2S2M2_NEW/CardWar_a-main/sources/game.cpp || cmake_object_order_depends_target_SP_Y2S2M2_NEW
+  DEP_FILE = CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/sources/game.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir
+  OBJECT_FILE_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/sources
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target SP_Y2S2M2_NEW
+
+
+#############################################
+# Link the executable SP_Y2S2M2_NEW
+
+build SP_Y2S2M2_NEW: CXX_EXECUTABLE_LINKER__SP_Y2S2M2_NEW_Debug CMakeFiles/SP_Y2S2M2_NEW.dir/main.cpp.o CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/Demo.cpp.o CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/sources/player.cpp.o CMakeFiles/SP_Y2S2M2_NEW.dir/CardWar_a-main/sources/game.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
+  OBJECT_DIR = CMakeFiles/SP_Y2S2M2_NEW.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = SP_Y2S2M2_NEW
+  TARGET_PDB = SP_Y2S2M2_NEW.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2_NEW/cmake-build-debug" && "/Users/nisimatiya/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2_NEW/cmake-build-debug" && "/Users/nisimatiya/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S"/Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2_NEW" -B"/Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2_NEW/cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2_NEW/cmake-build-debug
+
+build all: phony SP_Y2S2M2_NEW
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Users/nisimatiya/Desktop/מדעי$ המחשב/clion/System$ programming/SP_Y2S2M2_NEW/CMakeLists.txt /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Users/nisimatiya/Desktop/מדעי$ המחשב/clion/System$ programming/SP_Y2S2M2_NEW/CMakeLists.txt /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Users/nisimatiya/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all
