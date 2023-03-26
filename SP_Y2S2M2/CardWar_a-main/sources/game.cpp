@@ -3,17 +3,32 @@
 //
 
 #include "game.hpp"
+#include <iostream>
+#include <string>
+using namespace std;
 
-Game::Game(Player player, Player player1) {}
+Game::Game(Player player1, Player player2) {}
 
-void Game::playTurn() {}
+void Game::playTurn() {
+    cout << "playTurn" << endl;
+}
 
-void Game::printLastTurn() {}
+void Game::printLastTurn() {
+    cout << "printLastTurn" << endl;
+}
 
-void Game::playAll() {}
+void Game::playAll() {
+    cout << "playAll" << endl;
+}
 
-void Game::printWiner() {}
+void Game::printWiner() {
+    cout << "printWiner" << endl;
+}
 
-void Game::printLog() {}
+void Game::printLog() {
+    cout << "printLog" << endl;
+}
 
-void Game::printStats() {}
+void Game::printStats() {
+    cout << "printStats" << endl;
+}

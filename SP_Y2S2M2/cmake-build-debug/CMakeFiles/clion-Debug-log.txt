@@ -1,4 +1,4 @@
-"/Users/nisimatiya/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/nisimatiya/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S "/Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2_NEW" -B "/Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2_NEW/cmake-build-debug"
+"/Users/nisimatiya/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/nisimatiya/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S "/Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2" -B "/Users/nisimatiya/Desktop/מדעי המחשב/clion/System programming/SP_Y2S2M2/cmake-build-debug"
 -- Configuring done
 CMake Error at CMakeLists.txt:6 (add_executable):
   Cannot find source file:
