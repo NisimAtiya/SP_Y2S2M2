@@ -9,27 +9,7 @@
 using namespace std;
 
 namespace ariel{}
-//enum class suits{
-//    CLUBS,
-//    DIAMONDS,
-//    HEARTS,
-//    SPADES
-//};
-//enum class card_names{
-//    ACE=1,
-//    TOW,
-//    THREE,
-//    FOUR,
-//    FIVE,
-//    SIX,
-//    SEVEN,
-//    EIGHT,
-//    NINE,
-//    TEN,
-//    JECK,
-//    QUEEN,
-//    KING
-//};
+
 class Card {
     private:
         string name_;
@@ -39,6 +19,7 @@ class Card {
         Card(string name, string suits, int value);
         int get_value();
         string toString();
+        Card* bild_package();
 
 };
 
