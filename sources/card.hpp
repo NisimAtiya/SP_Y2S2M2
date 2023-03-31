@@ -9,34 +9,34 @@
 using namespace std;
 
 namespace ariel{}
-enum class suits{
-    CLUBS,
-    DIAMONDS,
-    HEARTS,
-    SPADES
-};
-enum class card_names{
-    ACE=1,
-    TOW,
-    THREE,
-    FOUR,
-    FIVE,
-    SIX,
-    SEVEN,
-    EIGHT,
-    NINE,
-    TEN
-    JECK,
-    QUEEN,
-    KING
-};
+//enum class suits{
+//    CLUBS,
+//    DIAMONDS,
+//    HEARTS,
+//    SPADES
+//};
+//enum class card_names{
+//    ACE=1,
+//    TOW,
+//    THREE,
+//    FOUR,
+//    FIVE,
+//    SIX,
+//    SEVEN,
+//    EIGHT,
+//    NINE,
+//    TEN,
+//    JECK,
+//    QUEEN,
+//    KING
+//};
 class Card {
     private:
-        card_names name_;
-        suits suits_;
+        string name_;
+        string suits_;
         int value_;
     public:
-        card(card_names name, suits suits, int value);
+        Card(string name, string suits, int value);
         int get_value();
         string toString();
 

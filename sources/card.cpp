@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-Card::Card(card_names name, suits suits, int value) {
+Card::Card(string name, string suits, int value) {
     this->name_=name;
     this->suits_=suits;
     this->value_=value;
@@ -16,5 +16,5 @@ int Card::get_value() {
     return this->value_;
 }
 string Card::toString() {
-    return ""<<this->name_<<" of "<< this->suits_;
+    return this->name_ + " of " + this->suits_;
 }
