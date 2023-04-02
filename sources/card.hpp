@@ -12,11 +12,11 @@ namespace ariel{}
 
 class Card {
     private:
-        string name_;
-        string suits_;
         int value_;
+        string Type_;
+
     public:
-        Card(string name, string suits, int value);
+        Card(int value, string Type);
         int get_value();
         string toString();
         Card* bild_package();
