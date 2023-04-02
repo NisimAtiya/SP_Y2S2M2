@@ -17,9 +17,13 @@ class Card {
 
     public:
         Card(int value, string Type);
+        Card();
         int get_value();
+        string get_type();
+        void set_value(int);
+        void set_type(string);
         string toString();
-        Card* bild_package();
+
 
 };
 
