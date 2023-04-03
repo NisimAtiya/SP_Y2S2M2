@@ -17,37 +17,23 @@ using namespace std;
 using namespace ariel;
 
 int main() {
-  // Create two players with their names 
-//   Player p1("Alice");
-//   Player p2("Bob");
-//
-//   Game game(p1,p2);
-//   for (int i=0;i<5;i++) {
-//    game.playTurn();
+    // Create two players with their names
+    Player p1("Alice");
+    Player p2("Bob");
+
+    Game game(p1,p2);
+    game.playTurn();
+    //  for (int i=0;i<5;i++) {
+    //   game.playTurn();
 //   }
-//   game.printLastTurn(); // print the last turn stats. For example:
-//                                                    // Alice played Queen of Hearts Bob played 5 of Spades. Alice wins.
-//                                                    // Alice played 6 of Hearts Bob played 6 of Spades. Draw. Alice played 10 of Clubs Bob played 10 of Diamonds. draw. Alice played Jack of Clubs Bob played King of Diamonds. Bob wins.
-//   cout << p1.stacksize() << endl; //prints the amount of cards left. should be 21 but can be less if a draw was played
-//   cout << p2.cardesTaken() << endl; // prints the amount of cards this player has won.
-//   game.playAll(); //playes the game untill the end
-//   game.printWiner(); // prints the name of the winning player
-//   game.printLog(); // prints all the turns played one line per turn (same format as game.printLastTurn())
-//   game.printStats();// for each player prints basic statistics: win rate, cards won, <other stats you want to print>. Also print the draw rate and amount of draws that happand. (draw within a draw counts as 2 draws. )
-    Card c1(1,"ACE");
-    cout<<c1.get_value();
-    Player p1 ("nisim");
-    cout<<p1.stacksize()<<endl;
-    cout<<p1.cardesTaken()<<endl;
-    cout<<p1.getname()<<endl;
-    cout<<p1.is_playing_now()<<endl;
-    p1.set_cardesTaken(12);
-    p1.set_name("atiya");
-    p1.set_is_playing_now(true);
-    p1.take_card(c1);
-    cout<< endl;
-    cout<<p1.stacksize()<<endl;
-    cout<<p1.cardesTaken()<<endl;
-    cout<<p1.getname()<<endl;
-    cout<<p1.is_playing_now()<<endl;
+    //  game.printLastTurn(); // print the last turn stats. For example:
+    // Alice played Queen of Hearts Bob played 5 of Spades. Alice wins.
+    // Alice played 6 of Hearts Bob played 6 of Spades. Draw. Alice played 10 of Clubs Bob played 10 of Diamonds. draw. Alice played Jack of Clubs Bob played King of Diamonds. Bob wins.
+    //  cout << p1.stacksize() << endl; //prints the amount of cards left. should be 21 but can be less if a draw was played
+    //  cout << p2.cardesTaken() << endl; // prints the amount of cards this player has won.
+    //  game.playAll(); //playes the game untill the end
+    //  game.printWiner(); // prints the name of the winning player
+    //  game.printLog(); // prints all the turns played one line per turn (same format as game.printLastTurn())
+    //  game.printStats();// for each player prints basic statistics: win rate, cards won, <other stats you want to print>. Also print the draw rate and amount of draws that happand. (draw within a draw counts as 2 draws. )
+
 }

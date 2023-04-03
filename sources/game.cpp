@@ -86,7 +86,7 @@ void Game::playTurn() {
                 temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                                " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
             if (cnt_draw!=0){
-                this->player2_.increase_cardes_Taken_(cnt_draw*3);
+                this->player2_.increase_cardes_Taken_(cnt_draw*6);
             }
             else{
                 this->player2_.increase_cardes_Taken_(2);
@@ -95,7 +95,7 @@ void Game::playTurn() {
             temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                            " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
             if (cnt_draw!=0){
-                this->player1_.increase_cardes_Taken_(cnt_draw*3);
+                this->player1_.increase_cardes_Taken_(cnt_draw*6);
             }
             else{
                 this->player1_.increase_cardes_Taken_(2);
@@ -108,7 +108,7 @@ void Game::playTurn() {
             temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                            " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
             if (cnt_draw!=0){
-                this->player1_.increase_cardes_Taken_(cnt_draw*3);
+                this->player1_.increase_cardes_Taken_(cnt_draw*6);
             }
             else{
                 this->player1_.increase_cardes_Taken_(2);
@@ -117,7 +117,7 @@ void Game::playTurn() {
             temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                            " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
             if (cnt_draw!=0){
-                this->player2_.increase_cardes_Taken_(cnt_draw*3);
+                this->player2_.increase_cardes_Taken_(cnt_draw*6);
             }
             else{
                 this->player2_.increase_cardes_Taken_(2);
@@ -129,7 +129,7 @@ void Game::playTurn() {
         temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                        " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
         if (cnt_draw!=0){
-            this->player1_.increase_cardes_Taken_(cnt_draw*3);
+            this->player1_.increase_cardes_Taken_(cnt_draw*6);
         }
         else{
             this->player1_.increase_cardes_Taken_(2);
@@ -139,7 +139,7 @@ void Game::playTurn() {
         temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                        " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
         if (cnt_draw!=0){
-            this->player2_.increase_cardes_Taken_(cnt_draw*3);
+            this->player2_.increase_cardes_Taken_(cnt_draw*6);
         }
         else{
             this->player2_.increase_cardes_Taken_(2);
