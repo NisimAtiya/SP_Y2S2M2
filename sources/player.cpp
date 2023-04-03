@@ -14,16 +14,7 @@ int Player::cardesTaken() {
     return this->cardes_Taken_;
 }
 
-Player::Player(string name) {
-    set_name(name);
-    set_is_playing_now(false);
-    set_cardesTaken(0);
-}
-Player::Player() {
-    set_name("guest");
-    set_is_playing_now(false);
-    set_cardesTaken(0);
-}
+
 string Player::getname() {
     return this->name_;
 }
@@ -35,4 +26,17 @@ bool Player::is_playing_now() {
 }
 void Player::set_is_playing_now(bool playing) {
     this->is_playing_now_ = playing;
+}
+void Player::set_cardesTaken(int num){
+    this->cardes_Taken_=num;
+}
+Player::Player(string name) {
+    set_name(name);
+    set_is_playing_now(false);
+    set_cardesTaken(0);
+}
+Player::Player() {
+    set_name("guest");
+    set_is_playing_now(false);
+    set_cardesTaken(0);
 }
