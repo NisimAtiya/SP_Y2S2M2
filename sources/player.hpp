@@ -17,6 +17,8 @@ private:
     bool is_playing_now_;
     int cardes_Taken_;
     vector<Card> packet;
+    int id_;
+    static int id;
 
 
 public:
@@ -30,6 +32,10 @@ public:
     bool is_playing_now();
     void set_is_playing_now(bool);
     void take_card(Card);
+    Card get_card();
+    void pull_card();
+    void increase_cardes_Taken_(int);
+    int getid();
 
 };
 

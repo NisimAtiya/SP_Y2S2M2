@@ -36,4 +36,18 @@ int main() {
 //   game.printStats();// for each player prints basic statistics: win rate, cards won, <other stats you want to print>. Also print the draw rate and amount of draws that happand. (draw within a draw counts as 2 draws. )
     Card c1(1,"ACE");
     cout<<c1.get_value();
+    Player p1 ("nisim");
+    cout<<p1.stacksize()<<endl;
+    cout<<p1.cardesTaken()<<endl;
+    cout<<p1.getname()<<endl;
+    cout<<p1.is_playing_now()<<endl;
+    p1.set_cardesTaken(12);
+    p1.set_name("atiya");
+    p1.set_is_playing_now(true);
+    p1.take_card(c1);
+    cout<< endl;
+    cout<<p1.stacksize()<<endl;
+    cout<<p1.cardesTaken()<<endl;
+    cout<<p1.getname()<<endl;
+    cout<<p1.is_playing_now()<<endl;
 }

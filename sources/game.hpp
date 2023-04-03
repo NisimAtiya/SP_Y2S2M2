@@ -7,24 +7,30 @@
 
 
 #include "player.hpp"
+#include <vector>
+
 namespace ariel{}
 
 class Game {
+    private:
+        Player player1_;
+        Player player2_;
+        Player wineer_;
+        string status_;
+        string status_lest_;
 
-public:
-    Game(Player, Player);
 
-    void playTurn();
 
-    void printLastTurn();
 
-    void playAll();
 
-    void printWiner();
-
-    void printLog();
-
-    void printStats();
+    public:
+        Game(Player &player1, Player &player2);
+        void playTurn();
+        void printLastTurn();
+        void playAll();
+        void printWiner();
+        void printLog();
+        void printStats();
 };
 
 
