@@ -40,3 +40,6 @@ Player::Player() {
     set_is_playing_now(false);
     set_cardesTaken(0);
 }
+void Player::take_card(Card c){
+    this->packet.push_back(c);
+}

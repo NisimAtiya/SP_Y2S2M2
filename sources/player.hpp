@@ -29,6 +29,7 @@ public:
     void set_name(string);
     bool is_playing_now();
     void set_is_playing_now(bool);
+    void take_card(Card);
 
 };
 
