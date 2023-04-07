@@ -13,8 +13,8 @@
 using namespace std;
 
 Game::Game(Player &player1, Player &player2):
-    player1_(player1),player2_(player2)
-    {
+        player1_(player1),player2_(player2)
+{
 
     // Checking that a player is not already in the middle of a game
     if (player2.is_playing_now() || player1.is_playing_now()) {
@@ -67,9 +67,9 @@ void Game::playTurn() {
     if(&this->player1_ == &this->player2_){
         throw std::invalid_argument("A player cannot play against himself");
     }
-    //If the game is over an error is thrown
+    //If There are no cards in the packan error is thrown
     if(this->player1_.stacksize()==0){
-        throw invalid_argument("The game is already over");
+        throw invalid_argument("There are no cards in the pack");
     }
 
     Card card_p1 = this->player1_.get_card();
@@ -79,20 +79,38 @@ void Game::playTurn() {
     string temp_status="";
     int card_on=2;
 
+
     //A case of a draw
     while (val_p1 == val_p2) {
         temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
-                " played " + card_p2.toString() + " - draw.\n";
+                       " played " + card_p2.toString() + " - draw.\n";
 
         this->player1_.pull_card();
         this->player2_.pull_card();
+        // Checks if there are more cards to draw
+        if(this->player1_.stacksize()==0){
+            this->player2_.increase_cardes_Taken_(card_on/2);
+            this->player2_.increase_cardes_Taken_(card_on/2);
+            this->player1_.set_is_playing_now(false);
+            this->player2_.set_is_playing_now(false);
+            return;
+        }
         this->player1_.pull_card();
         this->player2_.pull_card();
+        card_on+=2;
+        // If you run out of cards after 2 face down cards have come out
+        if(this->player1_.stacksize()==0){
+            this->player2_.increase_cardes_Taken_(card_on/2);
+            this->player2_.increase_cardes_Taken_(card_on/2);
+            this->player1_.set_is_playing_now(false);
+            this->player2_.set_is_playing_now(false);
+            return;
+        }
         card_p1 = this->player1_.get_card();
         card_p2 = this->player2_.get_card();
         val_p1 = card_p1.get_value();
         val_p2 = card_p2.get_value();
-        card_on+=4;
+        card_on+=2;
 
     }
     //A case where one of the players got 1
@@ -102,6 +120,7 @@ void Game::playTurn() {
                            " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
             this->player2_.increase_cardes_Taken_(card_on);
 
+
         } else{
             temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                            " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
@@ -109,7 +128,7 @@ void Game::playTurn() {
         }
 
     }
-    if(val_p2==1){
+    else if(val_p2==1){
         if (val_p1==2){
             temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                            " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
@@ -121,15 +140,15 @@ void Game::playTurn() {
         }
 
     }
-    if(val_p2<val_p1){
+    else if(val_p2<val_p1){
         temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                        " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
         this->player1_.increase_cardes_Taken_(card_on);
     }
-    if(val_p2>val_p1){
+    else if(val_p2>val_p1){
         temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                        " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
-        this->player1_.increase_cardes_Taken_(card_on);
+        this->player2_.increase_cardes_Taken_(card_on);
     }
     this->player1_.pull_card();
     this->player2_.pull_card();
@@ -159,6 +178,7 @@ void Game::playAll() {
 void Game::printWiner() {
     if(this->player1_.stacksize()!=0){
         cout<<"The game is not over yet"<<endl;
+        return;
     }
     if(this->player1_.cardesTaken()==this->player2_.cardesTaken()){
         throw invalid_argument("The game ended in a draw");
