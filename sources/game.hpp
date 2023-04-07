@@ -17,6 +17,7 @@ class Game {
         Player &player2_;
         string status_;
         string status_lest_;
+        int cnt_Update_statistics=0;
 
 
 

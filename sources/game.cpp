@@ -20,6 +20,7 @@ Game::Game(Player &player1, Player &player2):
     if (player2.is_playing_now() || player1.is_playing_now()) {
         throw std::invalid_argument("One of the players is already playing");
     }
+    this->cnt_Update_statistics=0;
     this->player1_.increase_played();
     this->player2_.increase_played();
 
@@ -205,12 +206,9 @@ void Game::printStats() {
     this->player2_.printStats_();
 
 }
-int cnt_Update_statistics=0;
+
 void Game::Update_statistics(){
-//    if(this->player1_.stacksize()!=0){
-//        return;
-//    }
-    if(cnt_Update_statistics==0){
+    if(this->cnt_Update_statistics==0){
         if (this->player1_.cardesTaken()== this->player2_.cardesTaken()){
             this->player1_.increase_draw();
             this->player2_.increase_draw();
