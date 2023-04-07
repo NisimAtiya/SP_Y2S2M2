@@ -12,14 +12,14 @@
 
 using namespace std;
 
-Game::Game(Player &player1, Player &player2) {
+Game::Game(Player &player1, Player &player2):
+    player1_(player1),player2_(player2)
+    {
     //צריך לבדוק אם שני השחקנים זה אותו שחקן
     if (player2.is_playing_now() || player1.is_playing_now()) {
         throw std::invalid_argument("One of the players is already playing");
     }
-    //Enter the players
-    this->player1_ = player1;
-    this->player2_ = player2;
+    
     //Create a package
     int index = 0;
     Card cards[52];
@@ -56,6 +56,9 @@ Game::Game(Player &player1, Player &player2) {
     }
     this->status_lest_="";
     this->status_="";
+    this->player1_.set_is_playing_now(true);
+    this->player2_.set_is_playing_now(true);
+
 }
 
 void Game::playTurn() {

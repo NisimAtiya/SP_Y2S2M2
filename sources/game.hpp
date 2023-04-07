@@ -13,8 +13,8 @@ namespace ariel{}
 
 class Game {
     private:
-        Player player1_;
-        Player player2_;
+        Player &player1_;
+        Player &player2_;
         string status_;
         string status_lest_;
 
