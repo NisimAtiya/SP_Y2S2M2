@@ -127,7 +127,11 @@ void Game::playTurn() {
     this->player2_.pull_card();
     this->status_lest_=temp_status;
     this->status_+=status_lest_;
-
+    // Updates that the players have finished playing if necessary
+    if(this->player1_.stacksize()==0){
+        this->player1_.set_is_playing_now(false);
+        this->player2_.set_is_playing_now(false);
+    }
 }
 
 
@@ -140,6 +144,8 @@ void Game::playAll() {
     while (this->player1_.stacksize()!=0){
         playTurn();
     }
+    this->player1_.set_is_playing_now(false);
+    this->player2_.set_is_playing_now(false);
 }
 
 void Game::printWiner() {
