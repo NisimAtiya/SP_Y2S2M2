@@ -204,6 +204,7 @@ void Game::printLog() {
 void Game::printStats() {
     this->player1_.printStats_();
     this->player2_.printStats_();
+    
 
 }
 
