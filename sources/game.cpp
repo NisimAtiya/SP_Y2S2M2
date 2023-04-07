@@ -48,7 +48,6 @@ Game::Game(Player &player1, Player &player2) {
     }
     // dealing the cards among the players
     for (int i = 0; i < 52; ++i) {
-        cout<<cards[i].toString();
         if (i%2==0){
             this->player1_.take_card(cards[i]);
         } else{
