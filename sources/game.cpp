@@ -213,7 +213,7 @@ void Game::Update_statistics(){
             this->player1_.increase_draw();
             this->player2_.increase_draw();
         }
-        if(this->player1_.cardesTaken()> this->player2_.cardesTaken()){
+        else if(this->player1_.cardesTaken()> this->player2_.cardesTaken()){
             this->player1_.increase_win();
             this->player2_.increase_loss();
         }else{
