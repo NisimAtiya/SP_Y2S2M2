@@ -181,7 +181,8 @@ void Game::printWiner() {
         return;
     }
     if(this->player1_.cardesTaken()==this->player2_.cardesTaken()){
-        throw invalid_argument("The game ended in a draw");
+        cout<<"The game ended in a draw";
+        return;
     }
     if(this->player1_.cardesTaken()> this->player2_.cardesTaken()){
         cout<<"the winner is: "+ this->player1_.getname()<<endl;
