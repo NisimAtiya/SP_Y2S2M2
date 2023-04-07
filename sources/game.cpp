@@ -15,11 +15,15 @@ using namespace std;
 Game::Game(Player &player1, Player &player2):
     player1_(player1),player2_(player2)
     {
-    //צריך לבדוק אם שני השחקנים זה אותו שחקן
+    // Checking that a player is not playing against himself
+    if(&player1 == &player2){
+        throw std::invalid_argument("A player cannot play against himself");
+    }
+    // Checking that a player is not already in the middle of a game
     if (player2.is_playing_now() || player1.is_playing_now()) {
         throw std::invalid_argument("One of the players is already playing");
     }
-    
+
     //Create a package
     int index = 0;
     Card cards[52];
