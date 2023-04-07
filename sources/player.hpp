@@ -17,6 +17,10 @@ private:
     bool is_playing_now_;
     int cardes_Taken_;
     vector<Card> packet;
+    int played;
+    int win;
+    int loss;
+    int draw;
 
 
 
@@ -34,6 +38,12 @@ public:
     Card get_card();
     void pull_card();
     void increase_cardes_Taken_(int);
+    void increase_played();
+    void increase_win();
+    void increase_loss();
+    void increase_draw();
+    void printStats_();
+
 };
 
 

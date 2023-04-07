@@ -30,6 +30,7 @@ class Game {
         void printWiner();
         void printLog();
         void printStats();
+        void Update_statistics();
 };
 
 

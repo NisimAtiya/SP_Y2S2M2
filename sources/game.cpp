@@ -20,6 +20,8 @@ Game::Game(Player &player1, Player &player2):
     if (player2.is_playing_now() || player1.is_playing_now()) {
         throw std::invalid_argument("One of the players is already playing");
     }
+    this->player1_.increase_played();
+    this->player2_.increase_played();
 
     //Create a package
     int index = 0;
@@ -93,6 +95,7 @@ void Game::playTurn() {
             this->player2_.increase_cardes_Taken_(card_on/2);
             this->player1_.set_is_playing_now(false);
             this->player2_.set_is_playing_now(false);
+            this->Update_statistics();
             return;
         }
         this->player1_.pull_card();
@@ -104,6 +107,7 @@ void Game::playTurn() {
             this->player2_.increase_cardes_Taken_(card_on/2);
             this->player1_.set_is_playing_now(false);
             this->player2_.set_is_playing_now(false);
+            this->Update_statistics();
             return;
         }
         card_p1 = this->player1_.get_card();
@@ -158,6 +162,7 @@ void Game::playTurn() {
     if(this->player1_.stacksize()==0){
         this->player1_.set_is_playing_now(false);
         this->player2_.set_is_playing_now(false);
+        this->Update_statistics();
     }
 }
 
@@ -196,5 +201,31 @@ void Game::printLog() {
 }
 
 void Game::printStats() {
-    cout << "printStats" << endl;
+    this->player1_.printStats_();
+    this->player2_.printStats_();
+
+}
+int cnt_Update_statistics=0;
+void Game::Update_statistics(){
+//    if(this->player1_.stacksize()!=0){
+//        return;
+//    }
+    if(cnt_Update_statistics==0){
+        Player winner;
+        Player loser;
+        if (this->player1_.cardesTaken()== this->player2_.cardesTaken()){
+            this->player1_.increase_draw();
+            this->player2_.increase_draw();
+        }
+        if(this->player1_.cardesTaken()> this->player2_.cardesTaken()){
+            winner=player1_;
+            loser=player2_;
+        }else{
+            winner=player2_;
+            loser=player1_;
+        }
+        winner.increase_win();
+        loser.increase_loss();
+        cnt_Update_statistics++;
+    }
 }
