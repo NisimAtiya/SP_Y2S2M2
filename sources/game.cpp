@@ -15,10 +15,7 @@ using namespace std;
 Game::Game(Player &player1, Player &player2):
     player1_(player1),player2_(player2)
     {
-    // Checking that a player is not playing against himself
-    if(&player1 == &player2){
-        throw std::invalid_argument("A player cannot play against himself");
-    }
+
     // Checking that a player is not already in the middle of a game
     if (player2.is_playing_now() || player1.is_playing_now()) {
         throw std::invalid_argument("One of the players is already playing");
@@ -66,6 +63,10 @@ Game::Game(Player &player1, Player &player2):
 }
 
 void Game::playTurn() {
+    // Checking that a player is not playing against himself
+    if(&this->player1_ == &this->player2_){
+        throw std::invalid_argument("A player cannot play against himself");
+    }
     //If the game is over an error is thrown
     if(this->player1_.stacksize()==0){
         throw invalid_argument("The game is already over");
@@ -157,7 +158,7 @@ void Game::playAll() {
 
 void Game::printWiner() {
     if(this->player1_.stacksize()!=0){
-        throw invalid_argument("The game is not over yet");
+        cout<<"The game is not over yet"<<endl;
     }
     if(this->player1_.cardesTaken()==this->player2_.cardesTaken()){
         throw invalid_argument("The game ended in a draw");
