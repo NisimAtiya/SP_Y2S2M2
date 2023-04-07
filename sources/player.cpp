@@ -78,8 +78,8 @@ void Player::increase_draw(){
     this->draw++;
 }
 void Player::printStats_(){
-    cout<< getname() + " played: " + to_string(this->played) + " games, Won: " + to_string(this->win) + " games, lost: " + to_string(
-            this->loss) + "games and ended in a draw: " + to_string(this->draw) + "games"<<endl;
+    cout<< this->getname() + " played: " + to_string(this->played) + " games, Won: " + to_string(this->win) + " games, lost: " + to_string(
+            this->loss) + " games and ended in a draw: " + to_string(this->draw) + " games."<<endl;
 }
 
 

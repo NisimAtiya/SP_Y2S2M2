@@ -211,21 +211,18 @@ void Game::Update_statistics(){
 //        return;
 //    }
     if(cnt_Update_statistics==0){
-        Player winner;
-        Player loser;
         if (this->player1_.cardesTaken()== this->player2_.cardesTaken()){
             this->player1_.increase_draw();
             this->player2_.increase_draw();
         }
         if(this->player1_.cardesTaken()> this->player2_.cardesTaken()){
-            winner=player1_;
-            loser=player2_;
+            this->player1_.increase_win();
+            this->player2_.increase_loss();
         }else{
-            winner=player2_;
-            loser=player1_;
+            this->player2_.increase_win();
+            this->player1_.increase_loss();
         }
-        winner.increase_win();
-        loser.increase_loss();
+
         cnt_Update_statistics++;
     }
 }
