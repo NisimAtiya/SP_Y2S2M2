@@ -35,6 +35,8 @@ Player::Player(string name) {
     set_name(name);
     set_is_playing_now(false);
     set_cardesTaken(0);
+    this->id_=id;
+    id++;
 }
 Player::Player() {
     set_name("guest");
@@ -55,7 +57,6 @@ void Player::pull_card(){
 void Player::increase_cardes_Taken_(int num){
     this->cardes_Taken_+=num;
 }
-
 
 int Player::getid(){
     return this->id_;

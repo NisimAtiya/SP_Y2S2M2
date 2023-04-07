@@ -36,7 +36,6 @@ public:
     void pull_card();
     void increase_cardes_Taken_(int);
     int getid();
-
 };
 
 

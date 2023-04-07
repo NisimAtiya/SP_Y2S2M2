@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 
+
 using namespace std;
 
 Game::Game(Player &player1, Player &player2) {
@@ -36,34 +37,40 @@ Game::Game(Player &player1, Player &player2) {
             index++;
         }
     }
-    //Shuffle the cards and put them in the pack and dealing the cards among the players
-    int cnt = 0;
-    while (cnt != 52) {
-        srand(time(NULL)); // seed the random number generator with the current time
-        int i = rand() % 52; // generate a random number between 0 and 51
-        while(cards[i].get_value()==0){
-            srand(time(NULL)); // seed the random number generator with the current time
-            i = rand() % 52;
-        }
-        if (cnt%2==0){
+    //Shuffle the cards and put them in the pack
+    srand(time(NULL)); // seed the random number generator with the current tim
+    for (int i = 0; i < 1000; ++i) {
+        int index = i % 51;
+        int rnd = rand() % 52; // generate a random number between 0 and 51
+        Card t =cards[rnd];
+        cards[rnd]=cards[index];
+        cards[index]=t;
+    }
+    // dealing the cards among the players
+    for (int i = 0; i < 52; ++i) {
+        cout<<cards[i].toString();
+        if (i%2==0){
             this->player1_.take_card(cards[i]);
         } else{
             this->player2_.take_card(cards[i]);
         }
-        cnt++;
-        cards[i].set_value(0);
     }
     this->status_lest_="";
     this->status_="";
 }
 
 void Game::playTurn() {
+    //If the game is over an error is thrown
+    if(this->player1_.stacksize()==0){
+        throw invalid_argument("The game is already over");
+    }
+
     Card card_p1 = this->player1_.get_card();
     Card card_p2 = this->player2_.get_card();
     int val_p1 = card_p1.get_value();
     int val_p2 = card_p2.get_value();
     string temp_status="";
-    int cnt_draw=0;
+    int card_on=2;
 
     //A case of a draw
     while (val_p1 == val_p2) {
@@ -78,28 +85,20 @@ void Game::playTurn() {
         card_p2 = this->player2_.get_card();
         val_p1 = card_p1.get_value();
         val_p2 = card_p2.get_value();
-        cnt_draw++;
+        card_on+=4;
+
     }
     //A case where one of the players got 1
     if(val_p1==1){
         if (val_p2==2){
-                temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
-                               " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
-            if (cnt_draw!=0){
-                this->player2_.increase_cardes_Taken_(cnt_draw*6);
-            }
-            else{
-                this->player2_.increase_cardes_Taken_(2);
-            }
+            temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
+                           " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
+            this->player2_.increase_cardes_Taken_(card_on);
+
         } else{
             temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                            " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
-            if (cnt_draw!=0){
-                this->player1_.increase_cardes_Taken_(cnt_draw*6);
-            }
-            else{
-                this->player1_.increase_cardes_Taken_(2);
-            }
+            this->player1_.increase_cardes_Taken_(card_on);
         }
 
     }
@@ -107,43 +106,23 @@ void Game::playTurn() {
         if (val_p1==2){
             temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                            " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
-            if (cnt_draw!=0){
-                this->player1_.increase_cardes_Taken_(cnt_draw*6);
-            }
-            else{
-                this->player1_.increase_cardes_Taken_(2);
-            }
+            this->player1_.increase_cardes_Taken_(card_on);
         } else{
             temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                            " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
-            if (cnt_draw!=0){
-                this->player2_.increase_cardes_Taken_(cnt_draw*6);
-            }
-            else{
-                this->player2_.increase_cardes_Taken_(2);
-            }
+            this->player2_.increase_cardes_Taken_(card_on);
         }
 
     }
     if(val_p2<val_p1){
         temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                        " played " + card_p2.toString() + " - "+ this->player1_.getname()+" won.\n";
-        if (cnt_draw!=0){
-            this->player1_.increase_cardes_Taken_(cnt_draw*6);
-        }
-        else{
-            this->player1_.increase_cardes_Taken_(2);
-        }
+        this->player1_.increase_cardes_Taken_(card_on);
     }
     if(val_p2>val_p1){
         temp_status += this->player1_.getname() + " played " + card_p1.toString() + ", " + this->player2_.getname() +
                        " played " + card_p2.toString() + " - "+ this->player2_.getname()+" won.\n";
-        if (cnt_draw!=0){
-            this->player2_.increase_cardes_Taken_(cnt_draw*6);
-        }
-        else{
-            this->player2_.increase_cardes_Taken_(2);
-        }
+        this->player1_.increase_cardes_Taken_(card_on);
     }
     this->player1_.pull_card();
     this->player2_.pull_card();
@@ -155,19 +134,31 @@ void Game::playTurn() {
 
 
 void Game::printLastTurn() {
-    cout << "printLastTurn" << endl;
+    cout<< this->status_lest_<<endl;
 }
 
 void Game::playAll() {
-    cout << "playAll" << endl;
+    while (this->player1_.stacksize()!=0){
+        playTurn();
+    }
 }
 
 void Game::printWiner() {
-    cout << "printWiner" << endl;
+    if(this->player1_.stacksize()!=0){
+        throw invalid_argument("The game is not over yet");
+    }
+    if(this->player1_.cardesTaken()==this->player2_.cardesTaken()){
+        throw invalid_argument("The game ended in a draw");
+    }
+    if(this->player1_.cardesTaken()> this->player2_.cardesTaken()){
+        cout<<"the winner is: "+ this->player1_.getname()<<endl;
+    }else{
+        cout<<"the winner is: "+ this->player2_.getname()<<endl;
+    }
 }
 
 void Game::printLog() {
-    cout << "printLog" << endl;
+    cout<< this->status_<<endl;
 }
 
 void Game::printStats() {

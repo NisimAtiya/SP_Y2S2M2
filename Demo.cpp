@@ -23,6 +23,7 @@ int main() {
 
     Game game(p1,p2);
     game.playTurn();
+    
     //  for (int i=0;i<5;i++) {
     //   game.playTurn();
 //   }
